@@ -1,0 +1,6 @@
+server:
+  port: 14236
+
+logging:
+  level:
+    root: debug

@@ -1,13 +1,17 @@
 package com.graphql.study.demo.service;
 
-import com.graphql.study.demo.bean.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public interface UserService {
+import com.graphql.study.demo.model.User;
+import com.graphql.study.demo.dao.UserDao;
 
-	/**
-	 * Get the user info with id
-	 * @return
-	 */
-	public User getUser(int id);
+@Service
+public class UserService {
+	@Autowired
+	private UserDao userDao;
 	
+	public User getUser(Long userId) {
+		return userDao.getUser(userId);
+	}
 }
